@@ -8,10 +8,6 @@ import (
 	"github.com/Robert076/tips-microservice/utils"
 )
 
-func getTodosFromDatabase() {
-
-}
-
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if utils.IsMethodNotAllowed(w, r, http.MethodGet) {
