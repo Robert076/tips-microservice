@@ -14,7 +14,8 @@ func main() {
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
-		todos := db.GetTipsFromDatabase()
-		json.NewEncoder(w).Encode(todos)
+		tips := db.GetTipsFromDatabase()
+		json.NewEncoder(w).Encode(tips)
 	})
+	http.ListenAndServe(":1234", nil)
 }

@@ -1,6 +1,6 @@
 package tip
 
 type Tip struct {
-	id      int
-	tipText string
+	Id   int
+	Text string
 }
