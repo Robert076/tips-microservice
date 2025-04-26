@@ -1,6 +1,6 @@
 package tip
 
 type Tip struct {
-	Id   int
-	Text string
+	Id   int    `json:"id"`
+	Text string `json:"text"`
 }
