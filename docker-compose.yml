@@ -1,12 +1,14 @@
 services:
   api:
-    image: robert076/tips-microservice:latest
+    image: robert076/tips-microservice:despicable-me-2
     ports:
       - "8080:1234"
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_DB=${POSTGRES_DB}
+      - HOST=database
+      - PORT=${PORT}
     depends_on:
       - database
   database:
