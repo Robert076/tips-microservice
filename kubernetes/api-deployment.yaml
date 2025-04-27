@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tips-app
+  template:
+    metadata:
+      labels:
+        app: tips-app
+    spec:
+      containers:
+        - name: tips-app-container
+          image: robert076/tips-microservice:despicable-me-2
+          ports:
+            - containerPort: 1234
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: tips-app-secrets
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: tips-app-secrets
+                  key: POSTGRES_USER
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: tips-app-secrets
+                  key: POSTGRES_DB
+            - name: HOST
+              value: "database"
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: tips-app-config
+                  key: PORT
