@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/get", func(w http.ResponseWriter, r *http.Request) {
 		if utils.IsMethodNotAllowed(w, r, http.MethodGet) {
 			return
 		}
