@@ -50,3 +50,4 @@ POSTGRES_DB="db"
 HOST="database"
 PORT="5432"
 ```
+***NOTE: This only works on macOS or Linux***
