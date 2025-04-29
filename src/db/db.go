@@ -3,6 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/Robert076/tips-microservice/tip"
@@ -11,7 +12,9 @@ import (
 )
 
 func GetTipsFromDatabase() []tip.Tip {
-	godotenv.Load()
+	if err := godotenv.Load(); err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 
 	host := os.Getenv("HOST")
 	port := os.Getenv("PORT")
@@ -27,6 +30,8 @@ func GetTipsFromDatabase() []tip.Tip {
 	if err != nil {
 		panic(err)
 	}
+
+	// nolint:errcheck
 	defer db.Close()
 
 	err = db.Ping()
@@ -39,6 +44,8 @@ func GetTipsFromDatabase() []tip.Tip {
 	if err != nil {
 		panic(err)
 	}
+
+	// nolint:errcheck
 	defer rows.Close()
 
 	var tips []tip.Tip

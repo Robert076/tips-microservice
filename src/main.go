@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 
 	"github.com/Robert076/tips-microservice/db"
@@ -13,9 +14,16 @@ func main() {
 		if utils.IsMethodNotAllowed(w, r, http.MethodGet) {
 			return
 		}
+
 		w.Header().Set("Content-Type", "application/json")
 		tips := db.GetTipsFromDatabase()
-		json.NewEncoder(w).Encode(tips)
+
+		if err := json.NewEncoder(w).Encode(tips); err != nil {
+			http.Error(w, "Failed to encode tips", http.StatusInternalServerError)
+			return
+		}
 	})
-	http.ListenAndServe(":1234", nil)
+	if err := http.ListenAndServe(":1234", nil); err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 }
