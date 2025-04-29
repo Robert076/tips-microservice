@@ -10,4 +10,4 @@ In order to run the API, do the following:
 
 `docker-compose up`
 
-3. Go in your browser, to ***localhost:8080***.
+3. Go in your browser, to **_localhost:8080_**.
