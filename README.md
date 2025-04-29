@@ -1,6 +1,6 @@
 # Tips Microservice 🍀
 
-A multi-container API built with Go and PostgreSQL that communicate via a bridge network. The Go container listens for HTTP GET requests, fetches data from the PostgreSQL database, and returns it to the user.
+A multi-container read-only API built with Go and PostgreSQL that communicate via a bridge network. The Go container listens for HTTP GET requests, fetches data from the PostgreSQL database, and returns it to the user.
 In order to run the API, do the following:
 
 1. Clone the repository
