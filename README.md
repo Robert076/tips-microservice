@@ -91,4 +91,4 @@ To run your app inside a local Kubernetes cluster, follow these steps:
 
 
 
-***NOTE: This only works on macOS or Linux***
+***NOTE: This only works on macOS or Linux because of the multi-stage Dockerfile for the API. You have to modify that if you want to run it on Windows.***
