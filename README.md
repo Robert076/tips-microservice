@@ -7,13 +7,17 @@ In order to run the API, do the following:
    
 Run the following command to clone the repository to your local machine:
 
-`git clone https://github.com/Robert076/tips-microservice/`
+```bash
+git clone https://github.com/Robert076/tips-microservice/
+```
 
 2. Run the containers
    
 Use Docker Compose to start the containers:
 
-`docker-compose up`
+```bash
+docker-compose up
+```
 
 3. Accesing the API
 
