@@ -40,7 +40,7 @@ Once the containers are running, you can either:
         └── 🛠️ utils.go              # Helper functions used throughout the project
 ```
 
-Make sure the *Docker daemon* is running before attempting to run `docker-compose up`
+Make sure the *Docker daemon* is running before attempting to run `docker-compose up`.
 
 You are going to also need a *.env* file in the root of the project, so take this one as an example:
 ```
