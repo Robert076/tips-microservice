@@ -32,12 +32,12 @@ Once the containers are running, you can either:
 ├── 📖 README.md                     # Project documentation
 ├── 🐳 docker-compose.yml            # Docker Compose configuration to define services
 ├── 🚢 kubernetes
-│   ├── ⚙️ api-deployment.yml           # Deployment for the api, describes how many replicas (pods) and how the pods will look regarding the API service
-│   ├── 🌐 api-service.yml
-│   ├── ⚙️ db-deployment.yml
-│   ├── 💾 db-pvc.yml
-│   ├── 🌐 db-service.yml
-│   └── ⚙️ tips-config.yml
+│   ├── ⚙️ api-deployment.yml        # Deployment for the API service, defines the desired state for replicas (pods) and their configuration
+│   ├── 🌐 api-service.yml           # Service for the API, exposes the API pods to the network and ensures accessibility, even if pods are re-created
+│   ├── ⚙️ db-deployment.yml         # Deployment for the database service, ensures the specified number of database pods are running and configured
+│   ├── 💾 db-pvc.yml                # Persistent Volume Claim (PVC) for the database, allows storage to persist even if the pod is re-created
+│   ├── 🌐 db-service.yml            # Service for the database, provides stable access to the database pod(s) even if they are re-created
+│   └── ⚙️ tips-config.yml           # Configuration for the application (config map in this case), contains environment variables needed for the deployments
 └── 🏗️ src                           
     ├── 🐋 Dockerfile                # Multi-stage Dockerfile for building the Go container
     ├── 🗃️ db                        
