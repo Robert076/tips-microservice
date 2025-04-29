@@ -19,8 +19,8 @@ Use Docker Compose to start the containers:
 
 Once the containers are running, you can either:
 
- - Open your browser and visit: http://localhost:8080/get
- - Or use Postman with a GET request to localhost:8080/get
+ - Open your browser and visit: http://localhost:8080/
+ - Or use Postman with a GET request to localhost:8080/
 
 
 ```
