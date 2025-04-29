@@ -72,7 +72,7 @@ To run your app inside a local Kubernetes cluster, follow these steps:
    ```bash
    brew install minikube
    ```
-
+   
 2. 🧰 **Install kubectl** (Kubernetes CLI for macOS):  
    ```bash
    brew install kubernetes-cli
@@ -83,12 +83,17 @@ To run your app inside a local Kubernetes cluster, follow these steps:
    minikube start
    ```
 
-4. 📡 **List running services**:  
+4. 🚢 **Apply kubernetes configurations**:
+   ```bash
+   kubectl apply -f kubernetes/  
+   ```
+
+5. 📡 **List running services**:  
    ```bash
    kubectl get svc
    ```
 
-5. 🌐 **Get the service URL**:  
+6. 🌐 **Get the service URL**:  
    Replace `<SERVICE_NAME>` with the name of your service from the previous command.  
    ```bash
    minikube service <SERVICE_NAME> --url
