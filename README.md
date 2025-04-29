@@ -38,5 +38,15 @@ Once the containers are running, you can either:
     │   └── 📝 tip.go                # Tip structure
     └── 🔧 utils                     
         └── 🛠️ utils.go              # Helper functions used throughout the project
+```
 
+Make sure the *Docker daemon* is running before attempting to run `docker-compose up`
+
+You are going to also need a *.env* file, so take this one as an example:
+```
+POSTGRES_USER="admin"
+POSTGRES_PASSWORD="admin"
+POSTGRES_DB="db"
+HOST="database"
+PORT="5432"
 ```
