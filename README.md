@@ -31,6 +31,13 @@ Once the containers are running, you can either:
 .
 ├── 📖 README.md                     # Project documentation
 ├── 🐳 docker-compose.yml            # Docker Compose configuration to define services
+├── 🚢 kubernetes
+│   ├── ⚙️ api-deployment.yml           # Deployment for the api, describes how many replicas (pods) and how the pods will look regarding the API service
+│   ├── 🌐 api-service.yml
+│   ├── ⚙️ db-deployment.yml
+│   ├── 💾 db-pvc.yml
+│   ├── 🌐 db-service.yml
+│   └── ⚙️ tips-config.yml
 └── 🏗️ src                           
     ├── 🐋 Dockerfile                # Multi-stage Dockerfile for building the Go container
     ├── 🗃️ db                        
