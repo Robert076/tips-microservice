@@ -53,7 +53,7 @@ Once the containers are running, you can either:
 
 Make sure the *Docker daemon* is running before attempting to run `docker-compose up`.
 
-You are going to also need a *.env* file in the root of the project, so take this one as an example:
+You are going to also need a *.env* file in the root of the project if you run it without Kubernetes, so take this one as an example:
 ```
 POSTGRES_USER="admin"
 POSTGRES_PASSWORD="admin"
